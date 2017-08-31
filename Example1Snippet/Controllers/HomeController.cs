@@ -8,11 +8,13 @@ namespace Example1Snippet.Controllers
 {
     public class HomeController : Controller
     {
+      
         public ActionResult Index()
         {
             return View();
         }
 
+      
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -20,6 +22,7 @@ namespace Example1Snippet.Controllers
             return View();
         }
 
+      
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

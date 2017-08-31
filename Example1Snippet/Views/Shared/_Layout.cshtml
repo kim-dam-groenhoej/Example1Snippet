@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Example1Snippet.Helpers
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -19,21 +20,21 @@
                 @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.NavigationLink("Home", "Index", "Home")</li>
-                    <li>@Html.NavigationLink("About", "About", "Home")</li>
-                    <li>@Html.NavigationLink("Contact", "Contact", "Home")</li>
-                </ul>
+                 @Html.MvcSiteMap().Menu()
+             
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+<div class="container body-content">
+ 
+    @Html.MvcSiteMap().SiteMapPath()
+
+    @RenderBody()
+    <hr/>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+</div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
