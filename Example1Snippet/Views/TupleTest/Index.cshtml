@@ -3,6 +3,27 @@
 @{
     ViewBag.Title = "Index";
 }
+<div class="product">
+    <h2>@Model.Item1.Name</h2>
+    <label>Pris</label>
+    <span>@Model.Item1.Price</span>
+</div>
 
-<h2>Index</h2>
+
+<div class="news">
+    <h3>Nyeste nyheder</h3>
+
+    @foreach (var newsPost in Model.Item2)
+    {
+        <div class="newsPost">
+            <strong>
+                @newsPost.Name
+            </strong>
+
+            <div>
+                @newsPost.Content
+            </div>
+        </div>
+    }
+</div>
 
