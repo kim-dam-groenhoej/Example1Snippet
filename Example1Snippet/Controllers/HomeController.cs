@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MvcSiteMapProvider.Web.Mvc.Filters;
 
 namespace Example1Snippet.Controllers
 {
@@ -28,6 +29,15 @@ namespace Example1Snippet.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        [SiteMapTitle("Item2")]
+        public ActionResult Page(int Id)
+        {
+            var title = "Page " + Id.ToString();
+            var model = new Tuple<int, string>(Id, title);
+
+            return View(model);
         }
     }
 }
